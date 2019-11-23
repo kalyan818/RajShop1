@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Chamber1">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_person_black_24dp"
+            android:id="@+id/person"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/person"
+            android:id="@+id/Name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/name"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Chamber1"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Chamber2">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_phone_black_24dp"
+            android:id="@+id/phone"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="30dp"
+            android:layout_toRightOf="@+id/phone"
+            android:id="@+id/Phone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/phone1"
+                android:inputType="number"
+                android:fontFamily="@font/roboto_regular"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 items"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_below="@+id/Chamber2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/items"
+        android:textSize="16dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/relative"/>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@+id/items"
+        android:layout_marginTop="10dp"
+        android:padding="20dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rs."
+        android:fontFamily="@font/roboto_regular"
+        android:layout_below="@+id/list"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:id="@+id/rupees"
+        android:textSize="20dp"
+        android:layout_alignParentRight="true" />
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottombuttons"
+        android:layout_alignParentBottom="true"
+        android:layout_weight="100">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="50%"
+            android:id="@+id/scanchamber">
+            <Button
+                android:layout_height="wrap_content"
+                android:text="SCAN"
+                android:background="@drawable/login"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/scan"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/roboto_regular"
+                android:layout_width="match_parent" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="50%"
+            android:layout_toRightOf="@+id/scanchamber">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Checkout"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/login"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/checkout"
+                android:textColor="#1565C0"
+                android:fontFamily="@font/roboto_regular"/>
+        </RelativeLayout>
+
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+
+
+</RelativeLayout>
